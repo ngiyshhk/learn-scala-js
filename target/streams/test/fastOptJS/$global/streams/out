@@ -1,0 +1,16 @@
+[0m[[0minfo[0m] [0mFast optimizing /Users/b03855/IdeaProjects/learn-scala-js/target/scala-2.12/learn-scala-js-test-fastopt.js[0m
+[0m[[0mdebug[0m] [0mLinker: Compute reachability: 66338 us[0m
+[0m[[0mdebug[0m] [0mLinker: Assemble LinkedClasses: 58751 us[0m
+[0m[[0mdebug[0m] [0mBasic Linking: 127282 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Batch mode: false[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Incremental part: 14672 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizing 4 methods.[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: Optimizer part: 999 us[0m
+[0m[[0mdebug[0m] [0mInc. optimizer: 19252 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Compute reachability: 52532 us[0m
+[0m[[0mdebug[0m] [0mRefiner: Assemble LinkedClasses: 5606 us[0m
+[0m[[0mdebug[0m] [0mRefiner: 58402 us[0m
+[0m[[0mdebug[0m] [0mEmitter: Class tree cache stats: reused: 1377 -- invalidated: 1[0m
+[0m[[0mdebug[0m] [0mEmitter: Method tree cache stats: resued: 3861 -- invalidated: 3[0m
+[0m[[0mdebug[0m] [0mEmitter (write output): 130480 us[0m
+[0m[[0mdebug[0m] [0mGlobal IR cache stats: reused: 10 -- invalidated: 1 -- trees read: 1[0m

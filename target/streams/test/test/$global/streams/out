@@ -1,0 +1,11 @@
+[0m[[0mdebug[0m] [0mRunning TaskDef(learnjs.TutorialTest, org.scalajs.testcommon.Serializer$FingerprintSerializer$$anon$3@4200021c, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m-----------------------------------Results-----------------------------------[0m
+[0m[[0minfo[0m] [0mlearnjs.TutorialTest		[32mSuccess[0m[0m
+[0m[[0minfo[0m] [0m    HelloWorld		[32mSuccess[0m[0m
+[0m[[0minfo[0m] [0m    ButtonClick		[32mSuccess[0m[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mTests: 3[0m
+[0m[[0minfo[0m] [0mPassed: 3[0m
+[0m[[0minfo[0m] [0mFailed: 0[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	learnjs.TutorialTest[0m

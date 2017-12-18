@@ -1,23 +1,16 @@
 package learnjs
 
-import org.scalajs.jquery.jQuery
-
-import scala.scalajs.js.annotation.JSExportTopLevel
+import japgolly.scalajs.react._
+import japgolly.scalajs.react.vdom.html_<^._
 
 object TutorialApp {
   def main(args: Array[String]): Unit = {
-    jQuery(() => setupUI())
+    val Hello =
+      ScalaComponent.builder[String]("Hello")
+      .render_P(name => <.div("Hello there ", name))
+      .build
+
+    Hello("Draconus")
   }
 
-  def setupUI(): Unit = {
-    jQuery("""<button type="button">Click me!</button>""")
-      .click(addClickedMessage _)
-      .appendTo(jQuery("body"))
-    jQuery("body").append("<p>Hello World</p>")
-  }
-
-  @JSExportTopLevel("addClickedMessage")
-  def addClickedMessage(): Unit = {
-    jQuery("body").append("<p>You clicked the button!</p>")
-  }
 }

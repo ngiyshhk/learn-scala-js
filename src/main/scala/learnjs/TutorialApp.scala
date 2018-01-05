@@ -38,7 +38,7 @@ object TutorialApp {
       .componentWillUnmount(_.backend.clear)
       .build
 
-    Page.Component(null).renderIntoDOM(dom.document.body)
+    Page.Props(null).render.renderIntoDOM(dom.document.body)
   }
 
 }

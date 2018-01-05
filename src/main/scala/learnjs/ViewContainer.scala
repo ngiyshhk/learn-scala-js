@@ -4,7 +4,7 @@ import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.html_<^._
 import japgolly.scalajs.react.extra._
 
-object Page {
+object ViewContainer {
 
   final case class Props(state: StateSnapshot[State]) {
     @inline def render: VdomElement = Component(this)
@@ -25,10 +25,10 @@ object Page {
 
   final class Backend($: BackendScope[Props, Unit]) {
     def render(p: Props): VdomElement =
-      <.div(^.className := "markup", Header.Props(null).render, ViewContainer.Props(null).render)
+      <.div(^.className := "view-container container", LandingView.Props(null).render)
   }
 
-  val Component = ScalaComponent.builder[Props]("Page")
+  val Component = ScalaComponent.builder[Props]("ViewContainer")
     .renderBackend[Backend]
     //.configure(Reusability.shouldComponentUpdate)
     .build

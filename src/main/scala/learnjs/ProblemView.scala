@@ -4,7 +4,7 @@ import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.html_<^._
 import japgolly.scalajs.react.extra._
 
-object Page {
+object ProblemView {
 
   final case class Props(state: StateSnapshot[State]) {
     @inline def render: VdomElement = Component(this)
@@ -25,10 +25,21 @@ object Page {
 
   final class Backend($: BackendScope[Props, Unit]) {
     def render(p: Props): VdomElement =
-      <.div(^.className := "markup", Header.Props(null).render, ViewContainer.Props(null).render)
+      <.div(^.className := "problem-view",
+        <.h3(^.className := "title"),
+        <.p(VdomAttr[String]("data-name") := "description"),
+        <.pre(<.code(VdomAttr[String]("data-name") := "code")),
+        <.form(
+          <.textarea(^.className := "u-full-width answer fixed-width-text"),
+          <.div(
+            <.button(^.className := "button-primary check-btn", "Check Answer"),
+            <.p(^.className := "result")
+          )
+        )
+      )
   }
 
-  val Component = ScalaComponent.builder[Props]("Page")
+  val Component = ScalaComponent.builder[Props]("ProblemView")
     .renderBackend[Backend]
     //.configure(Reusability.shouldComponentUpdate)
     .build

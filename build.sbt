@@ -5,29 +5,34 @@ version := "0.1"
 
 scalaVersion := "2.12.4"
 
+enablePlugins(ScalaJSPlugin)
+
 scalaJSUseMainModuleInitializer := true
 
 libraryDependencies ++= Seq(
   "org.scala-js" %%% "scalajs-dom" % "0.9.1",
-  "be.doeraene" %%% "scalajs-jquery" % "0.9.1",
   "com.github.japgolly.scalajs-react" %%% "core" % "1.1.1",
-  "io.monix" %% "monix" % "2.3.0",
-  "io.monix" %% "monix-cats" % "2.3.0",
+  "com.github.japgolly.scalajs-react" %%% "extra" % "1.1.1",
   "com.lihaoyi" %%% "utest" % "0.4.4" % "test"
 )
 
-enablePlugins(ScalaJSPlugin)
+jsDependencies ++= Seq(
 
-enablePlugins(ScalaJSBundlerPlugin)
+  "org.webjars.bower" % "react" % "15.6.1"
+    /        "react-with-addons.js"
+    minified "react-with-addons.min.js"
+    commonJSName "React",
 
-libraryDependencies += "com.github.japgolly.scalajs-react" %%% "core" % "1.1.1"
+  "org.webjars.bower" % "react" % "15.6.1"
+    /         "react-dom.js"
+    minified  "react-dom.min.js"
+    dependsOn "react-with-addons.js"
+    commonJSName "ReactDOM",
 
-npmDependencies in Compile ++= Seq(
-  "react" -> "15.6.1",
-  "react-dom" -> "15.6.1",
-  "jquery" -> "2.1.4"
-)
-
-jsEnv := new org.scalajs.jsenv.jsdomnodejs.JSDOMNodeJSEnv()
+  "org.webjars.bower" % "react" % "15.6.1"
+    /         "react-dom-server.js"
+    minified  "react-dom-server.min.js"
+    dependsOn "react-dom.js"
+    commonJSName "ReactDOMServer")
 
 testFrameworks += new TestFramework("utest.runner.Framework")

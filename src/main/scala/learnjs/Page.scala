@@ -25,7 +25,7 @@ object Page {
 
   final class Backend($: BackendScope[Props, Unit]) {
     def render(p: Props): VdomElement =
-      <.div(^.className := "markup", Header.Props(null).render, LandingView.Props(null).render)
+      <.div(^.className := "markup", Header.Props(null).render, ProfileView.Props(null).render)
   }
 
   val Component = ScalaComponent.builder[Props]("Page")

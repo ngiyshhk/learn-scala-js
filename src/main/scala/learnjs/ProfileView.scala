@@ -25,7 +25,9 @@ object ProfileView {
 
   final class Backend($: BackendScope[Props, Unit]) {
     def render(p: Props): VdomElement =
-      <.div
+      <.div(^.className := "profile-link navbar-padding-lg",
+        <.a(^.href := "#profile")
+      )
   }
 
   val Component = ScalaComponent.builder[Props]("ProfileView")

@@ -25,14 +25,16 @@ object LandingView {
 
   final class Backend($: BackendScope[Props, Unit]) {
     def render(p: Props): VdomElement =
-      <.div(^.className := "landing-view",
-        <.div(^.className := "row",
-          <.div(^.className := "one-half column",
-            <.h3("Learn JavaScript, one puzzle at a time."),
-            <.a(^.href := "#problem-1", ^.className := "button button-primary", "Start Now!")
-          ),
-          <.div(^.className := "one-half column",
-            <.img(^.src := "./images/HeroImage.jpg")
+      <.div(^.className := "view-container container",
+        <.div(^.className := "landing-view",
+          <.div(^.className := "row",
+            <.div(^.className := "one-half column",
+              <.h3("Learn JavaScript, one puzzle at a time."),
+              <.a(^.href := "#problem-1", ^.className := "button button-primary", "Start Now!")
+            ),
+            <.div(^.className := "one-half column",
+              <.img(^.src := "./images/HeroImage.jpg")
+            )
           )
         )
       )

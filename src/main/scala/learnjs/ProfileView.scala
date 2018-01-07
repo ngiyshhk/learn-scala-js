@@ -25,8 +25,10 @@ object ProfileView {
 
   final class Backend($: BackendScope[Props, Unit]) {
     def render(p: Props): VdomElement =
-      <.div(^.className := "profile-link navbar-padding-lg",
-        <.a(^.href := "#profile")
+      <.div(^.className := "view-container container",
+        <.div(^.className := "profile-link navbar-padding-lg",
+          <.a(^.href := "#profile")
+        )
       )
   }
 

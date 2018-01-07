@@ -25,15 +25,17 @@ object ProblemView {
 
   final class Backend($: BackendScope[Props, Unit]) {
     def render(p: Props): VdomElement =
-      <.div(^.className := "problem-view",
-        <.h3(^.className := "title"),
-        <.p(VdomAttr[String]("data-name") := "description"),
-        <.pre(<.code(VdomAttr[String]("data-name") := "code")),
-        <.form(
-          <.textarea(^.className := "u-full-width answer fixed-width-text"),
-          <.div(
-            <.button(^.className := "button-primary check-btn", "Check Answer"),
-            <.p(^.className := "result")
+      <.div(^.className := "view-container container",
+        <.div(^.className := "problem-view",
+          <.h3(^.className := "title"),
+          <.p(VdomAttr[String]("data-name") := "description"),
+          <.pre(<.code(VdomAttr[String]("data-name") := "code")),
+          <.form(
+            <.textarea(^.className := "u-full-width answer fixed-width-text"),
+            <.div(
+              <.button(^.className := "button-primary check-btn", "Check Answer"),
+              <.p(^.className := "result")
+            )
           )
         )
       )

@@ -1,7 +1,9 @@
 package learnjs
 
 import japgolly.scalajs.react._
+import japgolly.scalajs.react.extra.router.{BaseUrl, Router}
 import japgolly.scalajs.react.vdom.html_<^._
+import learnjs.routes.AppRouter
 import org.scalajs.dom
 
 import scala.scalajs.js
@@ -38,7 +40,9 @@ object TutorialApp {
       .componentWillUnmount(_.backend.clear)
       .build
 
-    Page.Props(null).render.renderIntoDOM(dom.document.body)
+    val baseUrl = BaseUrl.fromWindowOrigin / "learn-scala-js/"
+    val router = Router(baseUrl, AppRouter.routerConfig)
+    router().renderIntoDOM(dom.document.body)
   }
 
 }

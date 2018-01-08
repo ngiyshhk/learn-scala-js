@@ -6,7 +6,7 @@ import japgolly.scalajs.react.extra._
 
 object ProblemView {
 
-  final case class Props(state: StateSnapshot[State]) {
+  final case class Props(title: String, description: String) {
     @inline def render: VdomElement = Component(this)
   }
 
@@ -27,8 +27,8 @@ object ProblemView {
     def render(p: Props): VdomElement =
       <.div(^.className := "view-container container",
         <.div(^.className := "problem-view",
-          <.h3(^.className := "title"),
-          <.p(VdomAttr[String]("data-name") := "description"),
+          <.h3(^.className := "title", p.title),
+          <.p(VdomAttr[String]("data-name") := "description", p.description),
           <.pre(<.code(VdomAttr[String]("data-name") := "code")),
           <.form(
             <.textarea(^.className := "u-full-width answer fixed-width-text"),
